@@ -1,0 +1,89 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "b58a111a49d7e0e9e751dcb559845a44",
+    "entities": [
+      {
+        "tableName": "Users_table",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`names` TEXT NOT NULL, `photos` INTEGER, `uPhone` TEXT, PRIMARY KEY(`names`))",
+        "fields": [
+          {
+            "fieldPath": "userN",
+            "columnName": "names",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "uPhoto",
+            "columnName": "photos",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "uPhone",
+            "columnName": "uPhone",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "names"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "Clases_table",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`Nombre` TEXT NOT NULL, `Horas Semanales` INTEGER, `Profesor` TEXT, `fIncio` TEXT, `fFin` TEXT, PRIMARY KEY(`Nombre`))",
+        "fields": [
+          {
+            "fieldPath": "mClases",
+            "columnName": "Nombre",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "mHoras",
+            "columnName": "Horas Semanales",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "mProfesor",
+            "columnName": "Profesor",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "mDInicio",
+            "columnName": "fIncio",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "mDFin",
+            "columnName": "fFin",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "Nombre"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, \"b58a111a49d7e0e9e751dcb559845a44\")"
+    ]
+  }
+}
